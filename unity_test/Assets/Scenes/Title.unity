@@ -278,7 +278,7 @@ Prefab:
       objectReference: {fileID: 2089386844}
     - target: {fileID: 114314988599572536, guid: 4b129554b2e39bc4da3d363cf6c94ab8,
         type: 2}
-      propertyPath: tileButton
+      propertyPath: titleButton
       value: 
       objectReference: {fileID: 2089386847}
     - target: {fileID: 114314988599572536, guid: 4b129554b2e39bc4da3d363cf6c94ab8,
@@ -430,6 +430,16 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114695456827480368, guid: 5e330e78af6f27c44aacd0e5b20da96d,
+        type: 2}
+      propertyPath: m_Text
+      value: Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 114472197023933622, guid: 5e330e78af6f27c44aacd0e5b20da96d,
+        type: 2}
+      propertyPath: m_Text
+      value: Title Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e330e78af6f27c44aacd0e5b20da96d, type: 2}

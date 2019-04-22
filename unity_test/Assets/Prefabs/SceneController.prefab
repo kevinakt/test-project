@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a991c9488055e494299b841da637b90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileButton: {fileID: 1411046662117022, guid: 5e330e78af6f27c44aacd0e5b20da96d, type: 2}
-  mainButton: {fileID: 1737665498141972, guid: 5e330e78af6f27c44aacd0e5b20da96d, type: 2}
-  endButton: {fileID: 1600687504231846, guid: 5e330e78af6f27c44aacd0e5b20da96d, type: 2}
+  titleButton: {fileID: 0}
+  mainButton: {fileID: 0}
+  endButton: {fileID: 0}
 --- !u!114 &114492339331096892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,5 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed4b87095792f049a4d4c20eac890c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: {fileID: 114762265244713746, guid: 5e330e78af6f27c44aacd0e5b20da96d,
-    type: 2}
+  displayText: {fileID: 0}

@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 114381102268292230}
   - component: {fileID: 114514425656693582}
   m_Layer: 5
-  m_Name: Tile_button
+  m_Name: Title_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tile Scene
+  m_Text: Main Scene
 --- !u!114 &114514425656693582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737665498141972}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -548,7 +548,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tile
+  m_Text: Title
 --- !u!114 &114762265244713746
 MonoBehaviour:
   m_ObjectHideFlags: 1

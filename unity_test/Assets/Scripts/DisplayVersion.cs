@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class DisplayVersion : MonoBehaviour {
 
-    public Text displayText;
+    [SerializeField]
+    private Text displayText;
 
-	void Start () {
+    void Start()
+    {
         displayText.text = "Version : " + Application.version;
-	}
+    }
 
 }

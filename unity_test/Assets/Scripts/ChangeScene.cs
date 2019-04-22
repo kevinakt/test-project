@@ -6,18 +6,19 @@ using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour {
 
-    public GameObject tileButton, mainButton, endButton;
+    [SerializeField]
+    private GameObject titleButton, mainButton, endButton;
 
     private void Awake()
     {
         string sceneName = SceneManager.GetActiveScene().name;
-        tileButton.active = true;
+        titleButton.active = true;
         mainButton.active = true;
         endButton.active = true;
         switch (sceneName)
         {
-            case "Tile":
-                tileButton.active = false;
+            case "Title":
+                titleButton.active = false;
                 break;
             case "Main":
                 mainButton.active = false;
@@ -31,7 +32,7 @@ public class ChangeScene : MonoBehaviour {
     public void GoToTileScene()
     {
         Debug.Log("Tile Button is clicked.");
-        SceneManager.LoadScene("Tile");
+        SceneManager.LoadScene("Title");
     }
 
     public void GoToMainScene()

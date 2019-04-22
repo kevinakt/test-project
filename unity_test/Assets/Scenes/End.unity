@@ -393,6 +393,11 @@ Prefab:
       propertyPath: endButton
       value: 
       objectReference: {fileID: 701909383}
+    - target: {fileID: 114314988599572536, guid: 4b129554b2e39bc4da3d363cf6c94ab8,
+        type: 2}
+      propertyPath: titleButton
+      value: 
+      objectReference: {fileID: 701909385}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b129554b2e39bc4da3d363cf6c94ab8, type: 2}
   m_IsPrefabAsset: 0
