@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
 
 public class BatchBuild {
 
@@ -32,7 +32,7 @@ public class BatchBuild {
         if (m_TargetPlatform == BuildTarget.Android)
         {
             bool status = BuildAndroid(m_IsRelease);
-            EditorApplication.Exit(status ? 0 : 99);
+            EditorApplication.Exit(status ? 0 : 1);
         }
     }
 
@@ -51,15 +51,14 @@ public class BatchBuild {
         //SetAndroidKeyStoreSetting();
 
         string[] scenes = GetEnabledScene();
-        string errorMsg = null;
-        BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
+        BuildReport errorReport = BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
 
 
-        //if (string.IsNullOrEmpty(errorMsg))
-        //{
-        //    Debug.Log("[ScriptLog] Success Build Android");
-        //    return true;
-        //}
+        if (errorReport == null)
+        {
+            Debug.Log("[ScriptLog] Success Build Android");
+            return true;
+        }
 
         //Debug.Log("[ScriptLog] Failed Build Android");
         //Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
