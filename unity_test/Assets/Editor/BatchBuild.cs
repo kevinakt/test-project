@@ -85,12 +85,15 @@ public class BatchBuild {
             switch (args[i])
             {
                 case "-platform":
+                    Debug.Log("platform");
                     m_TargetPlatform = (BuildTarget)System.Enum.Parse(typeof(BuildTarget), args[i + 1]);
                     break;
                 case "-isRelease":
+                    Debug.Log("isRelease");
                     m_IsRelease = bool.Parse(args[i + 1]);
                     break;
                 case "-version":
+                    Debug.Log("-version");
                     version = args[i + 1];
                     PlayerSettings.bundleVersion = version;
                     break;
