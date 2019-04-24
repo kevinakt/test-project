@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatchTest {
 
-	public static void TestFunc()
+    public static void TestFunc()
     {
         Debug.Log("Hello world");
     }
