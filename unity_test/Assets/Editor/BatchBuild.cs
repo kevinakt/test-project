@@ -22,9 +22,7 @@ public class BatchBuild {
     {
         Debug.Log("test debug");
         GetCommandLineArgs();
-        m_TargetPlatform = BuildTarget.Android;
-        m_IsRelease = false;
-        version = "1.0.99";
+
         Debug.Log(m_TargetPlatform + ", " + m_IsRelease + ", " + version);
 
         if (m_TargetPlatform == BuildTarget.Android)
