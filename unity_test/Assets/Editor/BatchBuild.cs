@@ -32,7 +32,7 @@ public class BatchBuild {
         if (m_TargetPlatform == BuildTarget.Android)
         {
             bool status = BuildAndroid(m_IsRelease);
-            EditorApplication.Exit(status ? 0 : 1);
+            EditorApplication.Exit(status ? 0 : 99);
         }
     }
 
