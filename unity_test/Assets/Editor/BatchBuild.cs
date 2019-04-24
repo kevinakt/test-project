@@ -51,16 +51,16 @@ public class BatchBuild {
         //SetAndroidKeyStoreSetting();
 
         string[] scenes = GetEnabledScene();
-        BuildReport errorReport = BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
+        BuildReport buildReport = BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
 
 
-        if (errorReport == null)
+        if (buildReport.summary.result == BuildResult.Succeeded)
         {
             Debug.Log("[ScriptLog] Success Build Android");
             return true;
         }
 
-        //Debug.Log("[ScriptLog] Failed Build Android");
+        Debug.Log("[ScriptLog] Failed Build Android");
         //Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
         return false;
     }
