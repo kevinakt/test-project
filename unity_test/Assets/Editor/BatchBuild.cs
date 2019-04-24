@@ -23,6 +23,10 @@ public class BatchBuild {
         Debug.Log("test debug");
         GetCommandLineArgs();
 
+        //m_TargetPlatform = BuildTarget.Android;
+        //m_IsRelease = false;
+        //version = "9.0.9";
+
         Debug.Log(m_TargetPlatform + ", " + m_IsRelease + ", " + version);
 
         if (m_TargetPlatform == BuildTarget.Android)
@@ -58,7 +62,7 @@ public class BatchBuild {
         //}
 
         //Debug.Log("[ScriptLog] Failed Build Android");
-        Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
+        //Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
         return false;
     }
 
