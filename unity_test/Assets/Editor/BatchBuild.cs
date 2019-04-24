@@ -48,7 +48,7 @@ public class BatchBuild {
 
         string[] scenes = GetEnabledScene();
         string errorMsg = null;
-        BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, opt);
+        BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
 
 
         //if (string.IsNullOrEmpty(errorMsg))
