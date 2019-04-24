@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.Build;
 
 public class BatchBuild {
 
@@ -17,10 +18,13 @@ public class BatchBuild {
     //----------
 
     [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
-    public static void Build()
+    public static void BuildApk()
     {
         Debug.Log("test debug");
         GetCommandLineArgs();
+        m_TargetPlatform = BuildTarget.Android;
+        m_IsRelease = false;
+        version = "1.0.99";
         Debug.Log(m_TargetPlatform + ", " + m_IsRelease + ", " + version);
 
         if (m_TargetPlatform == BuildTarget.Android)
@@ -38,22 +42,24 @@ public class BatchBuild {
         BuildOptions opt = BuildOptions.None;
         if(isRelease == false)
         {
-            opt |= BuildOptions.Development | BuildOptions.ConnectWithProfiler | BuildOptions.AllowDebugging;
+            opt |= BuildOptions.Development | BuildOptions.AllowDebugging;
         }
 
         //  Keystoreの設定
         //SetAndroidKeyStoreSetting();
 
         string[] scenes = GetEnabledScene();
-        string errorMsg = BuildPipeline.BuildPlayer(scenes, "./Assets/Build", m_TargetPlatform, opt).ToString();
+        string errorMsg = null;
+        BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, opt);
 
-        if(string.IsNullOrEmpty(errorMsg))
-        {
-            Debug.Log("[ScriptLog] Success Build Android");
-            return true;
-        }
 
-        Debug.Log("[ScriptLog] Failed Build Android");
+        //if (string.IsNullOrEmpty(errorMsg))
+        //{
+        //    Debug.Log("[ScriptLog] Success Build Android");
+        //    return true;
+        //}
+
+        //Debug.Log("[ScriptLog] Failed Build Android");
         Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
         return false;
     }
