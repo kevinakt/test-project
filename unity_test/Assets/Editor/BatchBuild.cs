@@ -28,7 +28,7 @@ public class BatchBuild {
         //m_IsRelease = false;
         //version = "9.0.9";
 
-        Debug.Log(m_TargetPlatform + ", " + m_IsRelease + ", " + version);
+        Debug.Log(m_TargetPlatform + ", " + m_IsRelease + ", " + version + ", " + filename);
         Debug.Log("This is filename: " + filename);
 
         if (m_TargetPlatform == BuildTarget.Android)
