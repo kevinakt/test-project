@@ -8,7 +8,7 @@ public class BatchBuild {
 
     private static BuildTarget m_TargetPlatform;
     private static bool m_IsRelease = false;
-    private static bool filename = "./build/batch_build.apk";
+    private static string filename = "./build/batch_build.apk";
     private static string version;
 
     // Android KeyStore Settings
