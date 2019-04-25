@@ -8,6 +8,7 @@ public class BatchBuild {
 
     private static BuildTarget m_TargetPlatform;
     private static bool m_IsRelease = false;
+    private static bool filename = "./build/batch_build.apk";
     private static string version;
 
     // Android KeyStore Settings
@@ -51,7 +52,7 @@ public class BatchBuild {
         //SetAndroidKeyStoreSetting();
 
         string[] scenes = GetEnabledScene();
-        BuildReport buildReport = BuildPipeline.BuildPlayer(scenes, "./build/batch_build.apk", m_TargetPlatform, BuildOptions.None);
+        BuildReport buildReport = BuildPipeline.BuildPlayer(scenes, filename, m_TargetPlatform, BuildOptions.None);
 
 
         if (buildReport.summary.result == BuildResult.Succeeded)
@@ -103,6 +104,9 @@ public class BatchBuild {
                     Debug.Log("-version");
                     version = args[i + 1];
                     PlayerSettings.bundleVersion = version;
+                    break;
+                case "-filename":
+                    filename = args[i + 1];
                     break;
                 default:
                     break;
