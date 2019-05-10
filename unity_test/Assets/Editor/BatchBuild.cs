@@ -19,7 +19,7 @@ public class BatchBuild {
     //----------
 
     [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
-    public static void BuildApk()
+    public static void Build()
     {
         Debug.Log("test debug");
         GetCommandLineArgs();
@@ -35,7 +35,41 @@ public class BatchBuild {
         {
             bool status = BuildAndroid(m_IsRelease);
             EditorApplication.Exit(status ? 0 : 1);
+        } else {
+            bool status = BuildiOS();
+            EditorApplication.Exit(status ? 0 : 1);
         }
+    }
+
+    private static void SwitchIOSPlatform()
+    {
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.iOS, BuildTarget.iOS);
+    }
+
+    public static bool BuildiOS()
+    {
+        Debug.Log("[ScriptLog] Start Build iOS");
+
+        //  リリースビルドではない場合Profiler等は繋げるようにする
+        BuildOptions opt = BuildOptions.None;
+        // if(isRelease == false)
+        // {
+        //     opt |= BuildOptions.Development | BuildOptions.ConnectWithProfiler | BuildOptions.AllowDebugging;
+        // }
+
+        string[] scenes = GetEnabledScene();
+        BuildReport buildReport = BuildPipeline.BuildPlayer(scenes, filename, m_TargetPlatform, opt);
+
+
+        if (buildReport.summary.result == BuildResult.Succeeded)
+        {
+            Debug.Log("[ScriptLog] Success Build iOS");
+            return true;
+        }
+
+        Debug.Log("[ScriptLog] Failed Build iOS");
+        //Debug.Log(System.Environment.NewLine + errorMsg + System.Environment.NewLine);
+        return false;
     }
 
     public static bool BuildAndroid(bool isRelease = false)
