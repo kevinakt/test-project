@@ -154,6 +154,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.amata.testunity
     Standalone: com.Company.ProductName
+    iOS: com.Amata.TestProject
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
