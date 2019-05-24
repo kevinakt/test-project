@@ -10,9 +10,10 @@ public class FibonacciTest {
 
     [Test]
     public void CheckResult() {
+        Debug.Log("Start Check Result Test!!");
         int result = calFibo.fibonacci(10);
-        
-        Assert.AreEqual(55, result);
+    
+        Assert.AreEqual(55, result, "Fibonacci calculate failed!!!");
     }
 
     // [Test]
