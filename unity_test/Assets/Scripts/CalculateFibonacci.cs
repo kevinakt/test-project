@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class CalculateFibonacci : MonoBehaviour {
 
-	[SerializeField] InputField inputBox;
+	[SerializeField] Text inputBox{get; set;}
 	[SerializeField] Text resultText;
 	string result = "";
 
-	public bool Calculate(int input = 0) {
-		InputField inputScript = inputBox.GetComponent<InputField>();
+	public bool Calculate() {
 		result = "";
-		input = int.Parse(inputScript.text);
+		int input = int.Parse(inputBox.text);
 
 		if(input >= 1) {
 

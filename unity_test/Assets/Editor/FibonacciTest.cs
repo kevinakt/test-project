@@ -15,19 +15,19 @@ public class FibonacciTest {
         Assert.AreEqual(55, result);
     }
 
-    [Test]
-    public void InputMinus(){
-        bool result = calFibo.Calculate(-10);
+    // [Test]
+    // public void InputMinus(){
+    //     bool result = calFibo.Calculate(-10);
         
-        Assert.IsFalse(result);
-    }
+    //     Assert.IsFalse(result);
+    // }
 
-    [Test]
-    public void InputZero(){
-        bool result = calFibo.Calculate(0);
+    // [Test]
+    // public void InputZero(){
+    //     bool result = calFibo.Calculate(0);
         
-        Assert.IsFalse(result);
-    }
+    //     Assert.IsFalse(result);
+    // }
 
 
     // A UnityTest behaves like a coroutine in PlayMode
