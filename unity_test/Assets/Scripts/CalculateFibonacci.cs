@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class CalculateFibonacci : MonoBehaviour {
 
-	[SerializeField] Text inputBox{get; set;}
+	[SerializeField] Text inputBox;
 	[SerializeField] Text resultText;
 	string result = "";
 
-	public bool Calculate() {
+	public void Calculate() {
 		result = "";
 		int input = int.Parse(inputBox.text);
 
@@ -22,11 +22,9 @@ public class CalculateFibonacci : MonoBehaviour {
 			}
 			
 			resultText.text ="Result : " + result;
-
-			return true;
 		}
 		else {
-			return false;
+			Debug.Log("数値が１以下でした。");
 		}
 	}
 

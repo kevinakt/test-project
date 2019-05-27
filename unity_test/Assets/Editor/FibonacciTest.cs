@@ -16,21 +16,6 @@ public class FibonacciTest {
         Assert.AreEqual(55, result, "Fibonacci calculate failed!!!");
     }
 
-    // [Test]
-    // public void InputMinus(){
-    //     bool result = calFibo.Calculate(-10);
-        
-    //     Assert.IsFalse(result);
-    // }
-
-    // [Test]
-    // public void InputZero(){
-    //     bool result = calFibo.Calculate(0);
-        
-    //     Assert.IsFalse(result);
-    // }
-
-
     // A UnityTest behaves like a coroutine in PlayMode
     // and allows you to yield null to skip a frame in EditMode
     // [UnityTest]

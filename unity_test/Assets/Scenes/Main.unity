@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a060d45b8054aa45939d6e00dc57cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputBox: {fileID: 1521549685}
   resultText: {fileID: 303140375}
 --- !u!4 &458912728
 Transform:
