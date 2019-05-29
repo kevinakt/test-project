@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
+using System.IO;
 
 public class BatchBuild {
 
@@ -23,7 +24,7 @@ public class BatchBuild {
     {
         Debug.Log("test debug");
         GetCommandLineArgs();
-
+        SaveBuildID();
         //m_TargetPlatform = BuildTarget.Android;
         //m_IsRelease = false;
         //version = "9.0.9";
@@ -138,7 +139,7 @@ public class BatchBuild {
                 case "-version":
                     Debug.Log("-version");
                     version = args[i + 1];
-                    PlayerSettings.bundleVersion = version;
+                    //PlayerSettings.bundleVersion = version;
                     break;
                 case "-filename":
                     filename = args[i + 1];
@@ -169,5 +170,18 @@ public class BatchBuild {
         }
 
         return sceneList.ToArray();
+    }
+
+        private static void SaveBuildID(){
+        //CheckArgs();
+        string path = "Assets/Resources/buildVersion.txt";
+        StreamWriter writer = new StreamWriter(path, false);
+        writer.WriteLine(version);
+        writer.Close();
+
+       
+        StreamReader reader = new StreamReader(path);
+         PlayerSettings.bundleVersion = "Build Version : " + reader.ReadLine();
+        reader.Close();
     }
 }
