@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/test/unity_test/./build/batch_build.apk
+D:/test/unity_test/build/build.apk
 SceneListBegin?
 Assets/Scenes/Title.unity
 Assets/Scenes/Main.unity
