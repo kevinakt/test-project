@@ -13,22 +13,22 @@ public class CalculateFibonacci : MonoBehaviour {
 		result = "";
 		int input = int.Parse(inputBox.text);
 
-		fibonacci(input);
+		Fibonacci(input);
 
 		for(int i = 0; i <= input; i++) {
-			result += fibonacci(i) + " ";
+			result += Fibonacci(i) + " ";
 		}
 		
 		resultText.text ="Result : " + result;
 	}
 
-	public int fibonacci(int n) {
+	public int Fibonacci(int n) {
 		if(n <= 0) {
 			return 0;
 		} else if(n == 1) {
 			return 1;
 		} else {
-			return fibonacci(n-1) + fibonacci(n-2);
+			return Fibonacci(n-1) + Fibonacci(n-2);
 		}
 	}
 }
