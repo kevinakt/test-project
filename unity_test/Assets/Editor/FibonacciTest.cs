@@ -12,15 +12,15 @@ public class FibonacciTest {
 
         Debug.Log("Start Check Result Test!!");
         
-        int result = calFibo.fibonacci(10);
+        int result = calFibo.Fibonacci(10);
         Assert.AreEqual(55, result, "Fibonacci calculate is wrong!!!");
         
         Debug.Log("Start Check Zero Test!!");
-        result = calFibo.fibonacci(0);
+        result = calFibo.Fibonacci(0);
         Assert.AreEqual(0, result, "Fibonacci calculate is not zero!!!");
 
         Debug.Log("Start Check Minus Test!!");
-        result = calFibo.fibonacci(-1);
+        result = calFibo.Fibonacci(-1);
         Assert.AreEqual(0, result, "Fibonacci calculate is not zero!!!");
     }
 
