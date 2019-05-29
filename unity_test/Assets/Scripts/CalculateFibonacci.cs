@@ -13,23 +13,17 @@ public class CalculateFibonacci : MonoBehaviour {
 		result = "";
 		int input = int.Parse(inputBox.text);
 
-		if(input >= 1) {
+		fibonacci(input);
 
-			fibonacci(input);
-
-			for(int i = 1; i <= input; i++) {
-				result += fibonacci(i) + " ";
-			}
-			
-			resultText.text ="Result : " + result;
+		for(int i = 0; i <= input; i++) {
+			result += fibonacci(i) + " ";
 		}
-		else {
-			Debug.Log("数値が１以下でした。");
-		}
+		
+		resultText.text ="Result : " + result;
 	}
 
 	public int fibonacci(int n) {
-		if(n == 0) {
+		if(n <= 0) {
 			return 0;
 		} else if(n == 1) {
 			return 1;

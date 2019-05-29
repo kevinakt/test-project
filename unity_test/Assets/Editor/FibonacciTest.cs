@@ -6,14 +6,22 @@ using UnityEngine.UI;
 
 public class FibonacciTest {
 
-    CalculateFibonacci calFibo = new CalculateFibonacci();
-
     [Test]
     public void CheckResult() {
+        CalculateFibonacci calFibo = new CalculateFibonacci();
+
         Debug.Log("Start Check Result Test!!");
+        
         int result = calFibo.fibonacci(10);
-    
-        Assert.AreEqual(55, result, "Fibonacci calculate failed!!!");
+        Assert.AreEqual(55, result, "Fibonacci calculate is wrong!!!");
+        
+        Debug.Log("Start Check Zero Test!!");
+        result = calFibo.fibonacci(0);
+        Assert.AreEqual(0, result, "Fibonacci calculate is not zero!!!");
+
+        Debug.Log("Start Check Minus Test!!");
+        result = calFibo.fibonacci(-1);
+        Assert.AreEqual(0, result, "Fibonacci calculate is not zero!!!");
     }
 
     // A UnityTest behaves like a coroutine in PlayMode
