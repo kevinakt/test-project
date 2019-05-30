@@ -45,7 +45,7 @@ public class DisplayVersion : MonoBehaviour {
 
         filePath = Path.Combine(Application.dataPath, "/Raw/buildVersion.txt");
         StreamReader reader = new StreamReader(filePath);
-        displayText.text = "Version :" + reader.read();
+        displayText.text = "Version :" + reader.ReadLine();
         reader.Close();
 
         #else
