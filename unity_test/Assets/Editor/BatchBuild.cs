@@ -173,7 +173,7 @@ public class BatchBuild {
     }
 
     private static void SaveBuildID(){
-        GetCommandLineArgs();
+        //GetCommandLineArgs();
         string path = Application.streamingAssetsPath + "buildVersion.txt";
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(version);
