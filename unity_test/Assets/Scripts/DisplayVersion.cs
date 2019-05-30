@@ -43,7 +43,7 @@ public class DisplayVersion : MonoBehaviour {
         string filePath;
         #if UNITY_IOS
 
-        filePath = Path.Combine(Application.dataPath, "/Raw/buildVersion.txt");
+        filePath = Path.Combine(Application.streamingAssetsPath, "buildVersion.txt");
         StreamReader reader = new StreamReader(filePath);
         displayText.text = "Version :" + reader.ReadLine();
         reader.Close();
