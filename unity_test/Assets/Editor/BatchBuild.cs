@@ -172,16 +172,11 @@ public class BatchBuild {
         return sceneList.ToArray();
     }
 
-        private static void SaveBuildID(){
-        //CheckArgs();
-        string path = "Assets/Resources/buildVersion.txt";
+    private static void SaveBuildID(){
+        GetCommandLineArgs();
+        string path = Application.streamingAssetsPath + "buildVersion.txt";
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(version);
         writer.Close();
-
-       
-        StreamReader reader = new StreamReader(path);
-         PlayerSettings.bundleVersion = "Build Version : " + reader.ReadLine();
-        reader.Close();
     }
 }
